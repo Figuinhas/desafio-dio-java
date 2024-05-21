@@ -4,6 +4,7 @@ import java.time.LocalDate;
 
 import desafio_poo_dio.dominio.Curso;
 import desafio_poo_dio.dominio.Mentoria;
+import desafio_poo_dio.dominio.Conteudo;
 
 public class Main {
     public static void main(String[] args) {
@@ -25,6 +26,9 @@ public class Main {
         System.out.println(curso1);
         System.out.println(curso2);
         System.out.println(mentoria);
+
+        Conteudo conteudo = new Curso();
+        Conteudo conteudo1 = new Mentoria();
 
     }
 }
