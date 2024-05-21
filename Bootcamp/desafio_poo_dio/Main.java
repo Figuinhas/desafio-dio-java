@@ -3,8 +3,9 @@ package desafio_poo_dio;
 import java.time.LocalDate;
 
 import desafio_poo_dio.dominio.Curso;
+import desafio_poo_dio.dominio.Dev;
 import desafio_poo_dio.dominio.Mentoria;
-import desafio_poo_dio.dominio.Conteudo;
+import desafio_poo_dio.dominio.Bootcamp;
 
 public class Main {
     public static void main(String[] args) {
@@ -23,12 +24,40 @@ public class Main {
         mentoria.setDescricao("Descriçao mentoria java");
         mentoria.setData(LocalDate.now());
 
-        System.out.println(curso1);
-        System.out.println(curso2);
-        System.out.println(mentoria);
+        // System.out.println(curso1);
+        // System.out.println(curso2);
+        // System.out.println(mentoria);
 
-        Conteudo conteudo = new Curso();
-        Conteudo conteudo1 = new Mentoria();
+        Bootcamp bootcamp = new Bootcamp();
+        bootcamp.setNome("Bootcamp Java Developer");
+        bootcamp.setDescricao("Descrição Bootcamp Java Developer");
+        bootcamp.getConteudos().add(curso1);
+        bootcamp.getConteudos().add(curso2);
+        bootcamp.getConteudos().add(mentoria);
+        
+        Dev devGuilherme = new Dev();
+        devGuilherme.setNome("Guilherme");
+        devGuilherme.InscreverBootcamp(bootcamp);
+        System.out.println("Conteudos Inscritos Guilherme " + devGuilherme.getConteudosIncritos());
+        devGuilherme.progredir();
+        System.out.println("Conteudos Concluidos Guilherme " + devGuilherme.getConteudosConcluidos());
+        System.out.println("Conteudos Inscritos Guilherme " + devGuilherme.getConteudosIncritos());
+        System.out.println("XP: " + devGuilherme.calcularTotalXp());
+
+        System.out.println("//////////////////////");
+
+        Dev devFigas = new Dev();
+        devFigas.setNome("Figas");
+        devFigas.InscreverBootcamp(bootcamp);
+        System.out.println("Conteudos Inscritos Figas" + devFigas.getConteudosIncritos());
+        devFigas.progredir();
+        devFigas.progredir();
+        devFigas.progredir();
+        System.out.println("Conteudos Concluidos Figas " + devFigas.getConteudosConcluidos());
+        System.out.println("Conteudos Inscritos Figas" + devFigas.getConteudosIncritos());
+        System.out.println("XP: " + devFigas.calcularTotalXp());
+
+        
 
     }
 }
